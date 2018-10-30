@@ -3,6 +3,10 @@ Starting audit...
 Audit done.
 Checkstyle ends with 1 errors.
 Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\2.1 CC_Percolation\CC.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\2.1 CC_Percolation\Graph.java:1:8: Unused import - java.util.NoSuchElementException. [UnusedImports]
 [ERROR] C:\Users\rites\ADS-2_20186010\2.1 CC_Percolation\Graph.java:2: Missing a Javadoc comment. [JavadocType]
 [ERROR] C:\Users\rites\ADS-2_20186010\2.1 CC_Percolation\Graph.java:3:5: Missing a Javadoc comment. [JavadocVariable]
