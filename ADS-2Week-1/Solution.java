@@ -46,19 +46,19 @@ class PageRank {
 		}
 		return rank;
 	}
-	// String toString() {
-	// 	System.out.println(V + " vertices, " + E + " edges ");
-	// 	for (int i = 0; i < vertices; i++) {
-	// 		System.out.print(i + ": ");
-	// 		PageRank pr = new PageRank(digraph, i);
-	// 		pgrank.add(pr);
-	// 		System.out.println(pgrank.getPR(i));
-	// 		for (Integer i : digraph.adj(j)) {
-	// 			System.out.print(i + " ");
-	// 		}
-	// 		System.out.println();
-	// 	}
-	// }
+	String toString(Digraph G) {
+		System.out.println(G.V() + " vertices, " + G.E() + " edges ");
+		for (int i = 0; i < G.V(); i++) {
+			System.out.print(i + ": ");
+			PageRank pr = new PageRank(dg, i);
+			pgrank.add(pr);
+			System.out.println(pgrank.getPR(i));
+			for (Integer i : dg.adj(j)) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
+	}
 }
 class WebSearch {
 
@@ -81,8 +81,6 @@ public class Solution {
 		// to read the adjacency list from std input
 		// and build the graph
 		ArrayList<PageRank> pgrank = new ArrayList<>();
-		
-		
 		// Create page rank object and pass the graph object to the constructor
 		
 		// print the page rank object
