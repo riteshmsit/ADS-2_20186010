@@ -31,6 +31,7 @@ public class Bipartite {
         for (int w : G.adj(v)) {
             // short circuit if odd-length cycle found
             if (cycle != null) return;
+
             // found uncolored vertex, so recur
             if (!marked[w]) {
                 edgeTo[w] = v;
