@@ -36,6 +36,10 @@ Checkstyle ends with 1 errors.
 Starting audit...
 Audit done.
 Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\MinPQ.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Queue.java:5: Line has trailing spaces. [RegexpSingleline]
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Queue.java:9: Line has trailing spaces. [RegexpSingleline]
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Queue.java:29: Line is longer than 80 characters (found 95). [LineLength]
