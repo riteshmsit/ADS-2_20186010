@@ -105,6 +105,9 @@ public class Solution {
                     printSeam(seamCarver, horizontalSeam, true);
                 }
                 break;
+            case "":
+            System.out.println("picture is null");
+            break;
 
             case "removeHorizontalSeam removeVerticalSeam":
                 while (scan.hasNextLine()) {
@@ -124,6 +127,7 @@ public class Solution {
             }
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
-        }
+        }   
+            
     }
 }
