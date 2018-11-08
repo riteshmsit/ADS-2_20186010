@@ -30,6 +30,10 @@ Starting audit...
 Audit done.
 Checkstyle ends with 28 errors.
 Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Edge.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\EdgeWeightedGraph.java:4: Missing a Javadoc comment. [JavadocType]
 Audit done.
 Checkstyle ends with 1 errors.
@@ -76,9 +80,7 @@ Starting audit...
 Audit done.
 Checkstyle ends with 33 errors.
 Starting audit...
-[ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
-Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Stack.java:13: Line has trailing spaces. [RegexpSingleline]
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\Stack.java:14: Line has trailing spaces. [RegexpSingleline]
@@ -176,3 +178,7 @@ Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\StdOut.java:225:37: '7.0' is a magic number. [MagicNumber]
 Audit done.
 Checkstyle ends with 62 errors.
+Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\m7\1. MST\UF.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+Audit done.
+Checkstyle ends with 1 errors.
