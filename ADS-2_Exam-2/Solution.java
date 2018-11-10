@@ -63,14 +63,39 @@ public class Solution {
 				flag2 = true;
 				distance2 = shortest2.distance(Integer.parseInt(str1[2]));
 			}
-				double Distance = distance1 + distance2;
-				// Time Complexity: O(1)
-				if (flag1 && flag2) {
-					// Displays output upto 1 decimal point
-				System.out.format("%.1f", Distance);
+			double Distance = distance1 + distance2;
+			// Time Complexity: O(1)
+			if (flag1 && flag2) {
+			// Displays output upto 1 decimal point
+			System.out.format("%.1f", Distance);
 			} else {
 				System.out.println("No Path Found.");
 			}
+			System.out.println();
+            ArrayList<Integer> path = new ArrayList<>();
+            for (Edge eachlink : shortest1.pathTo(Integer.parseInt(str1[1]))) {
+                int either = eachlink.either();
+                int other = eachlink.other(eachlink.either());
+                if (!path.contains(other)) {
+                    path.add(other);
+                }
+                if (!path.contains(either)) {
+                    path.add(either);
+                }
+                }
+                for (Edge eachlink1 : shortest2.pathTo(Integer.parseInt(str1[2]))) {
+                    int either1 = eachlink1.either();
+                    int other1 = eachlink1.other(eachlink1.either());
+                    if (!path.contains(other1)) {
+                        path.add(other1);
+                    }
+                    if (!path.contains(either1)) {
+                        path.add(either1);
+                    }
+                }
+                for (int everyval : path) {
+                    System.out.print(everyval + " ");
+                }
 			break;
 		default:
 			break;
