@@ -13,7 +13,8 @@ public class Solution {
 		// The road lines is the number of edges
 		for (int i = 0; i < roadlines; i++) {
 			String[] tokens = sc.nextLine().split(" ");
-			edge.addEdge(new Edge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]),Double.parseDouble(tokens[2])));
+			edge.addEdge(new Edge(Integer.parseInt(tokens[0]), Integer.parseInt(tokens[1]),
+				Double.parseDouble(tokens[2])));
 		}
 		String caseToGo = sc.nextLine();
 		switch (caseToGo) {
