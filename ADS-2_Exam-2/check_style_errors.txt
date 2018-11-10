@@ -1,0 +1,86 @@
+Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:13: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:14: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:17: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:18: Line is longer than 80 characters (found 81). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:20: Line is longer than 80 characters (found 105). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:23: Type Javadoc comment is missing @param <Item> tag. [JavadocType]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:24:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:24:17: Name 'N' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:25:5: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:28: Missing a Javadoc comment. [JavadocType]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:29:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:30:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:44: Expected @return tag. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:51: Expected @return tag. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:58:21: Parameter item should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:58:26: Expected @param tag for 'item'. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:68: Expected @return tag. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:69: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:72: Missing a Javadoc comment. [JavadocType]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:73:9: Missing a Javadoc comment. [JavadocVariable]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:74: Line is longer than 80 characters (found 81). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:74:35: '{' at column 35 should have line break after. [LeftCurly]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:75: Line is longer than 80 characters (found 81). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:75:35: '{' at column 35 should have line break after. [LeftCurly]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:77:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:78: 'if' construct must use '{}'s. [NeedBraces]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Bag.java:80: Line has trailing spaces. [RegexpSingleline]
+Audit done.
+Checkstyle ends with 28 errors.
+Starting audit...
+Audit done.
+Starting audit...
+Audit done.
+Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\EdgeWeightedGraph.java:104: Line has trailing spaces. [RegexpSingleline]
+Audit done.
+Checkstyle ends with 1 errors.
+Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:5:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:5:5: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:5:16: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:6:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:6:5: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:6:16: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:7:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:7:5: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:8:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:8:5: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:15:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:18:27: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:22:17: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MemberName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:41:5: Redundant 'public' modifier. [RedundantModifier]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:41:22: Parameter V should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:41:26: 'V' hides a field. [HiddenField]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:41:26: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [ParameterName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:57:16: Name 'V' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:66:16: Name 'E' must match pattern '^[a-z][a-zA-Z0-9]*$'. [MethodName]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:69:5: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:69:27: Parameter v should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:78: Line is longer than 80 characters (found 93). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:80:25: Parameter v should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:80:32: Parameter w should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:97:34: Parameter v should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:108:23: Parameter v should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Graph.java:116: Line is longer than 80 characters (found 93). [LineLength]
+Audit done.
+Checkstyle ends with 27 errors.
+Starting audit...
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:0: File does not end with a newline. [NewlineAtEndOfFile]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:1: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:2: Missing a Javadoc comment. [JavadocType]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:2:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:3:1: File contains tab characters (this is the first instance). [FileTabCharacter]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:3:9: Missing a Javadoc comment. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:3:33: Parameter args should be final. [FinalParameters]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:14: Line is longer than 80 characters (found 135). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:14:104: ',' is not followed by whitespace. [WhitespaceAfter]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:24: Line is longer than 80 characters (found 90). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:28: Line has trailing spaces. [RegexpSingleline]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:32: Line is longer than 80 characters (found 87). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:33: Line is longer than 80 characters (found 110). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:37: Line has trailing spaces. [RegexpSingleline]
+Audit done.
+Checkstyle ends with 14 errors.
