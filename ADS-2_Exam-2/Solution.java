@@ -52,20 +52,24 @@ public class Solution {
 			double distance1 = 0.0;
 			double distance2 = 0.0;
 			DijkstraSP shortest1 = new DijkstraSP(edge, Integer.parseInt(str1[0]));
+			// Time Complexity: O(1)
 			if (shortest1.hasPathTo(Integer.parseInt(str1[1]))) {
 				flag1 = true;
 				distance1 = shortest1.distance(Integer.parseInt(str1[1]));
 			}
 			DijkstraSP shortest2 = new DijkstraSP(edge, Integer.parseInt(str1[1]));
+			// Time Complexity: O(1)
 			if (shortest2.hasPathTo(Integer.parseInt(str1[2]))) {
 				flag2 = true;
 				distance2 = shortest2.distance(Integer.parseInt(str1[2]));
 			}
 				double Distance = distance1 + distance2;
+				// Time Complexity: O(1)
 				if (flag1 && flag2) {
+					// Displays output upto 1 decimal point
 				System.out.format("%.1f", Distance);
 			} else {
-			System.out.println("No Path Found.");
+				System.out.println("No Path Found.");
 			}
 			break;
 		default:
