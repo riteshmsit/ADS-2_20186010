@@ -87,15 +87,13 @@ Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:27: Line is longer than 80 characters (found 90). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:44: Line is longer than 80 characters (found 87). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:45: Line is longer than 80 characters (found 110). [LineLength]
-[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:52:44: '10' is a magic number. [MagicNumber]
-[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:53:44: '10' is a magic number. [MagicNumber]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:54: Line is longer than 80 characters (found 95). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:57: Line is longer than 80 characters (found 90). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:59: Line is longer than 80 characters (found 95). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:62: Line is longer than 80 characters (found 90). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:64:40: Name 'Distance' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
 Audit done.
-Checkstyle ends with 18 errors.
+Checkstyle ends with 16 errors.
 Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Stack.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Stack.java:13: Line has trailing spaces. [RegexpSingleline]

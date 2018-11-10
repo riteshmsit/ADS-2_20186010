@@ -49,8 +49,8 @@ public class Solution {
 			String[] str1 = sc.nextLine().split(" ");
 			boolean flag1 = false;
 			boolean flag2 = false;
-			double distance1 = 10;
-			double distance2 = 10;
+			double distance1 = 0.0;
+			double distance2 = 0.0;
 			DijkstraSP shortest1 = new DijkstraSP(edge, Integer.parseInt(str1[0]));
 			if (shortest1.hasPathTo(Integer.parseInt(str1[1]))) {
 				flag1 = true;
