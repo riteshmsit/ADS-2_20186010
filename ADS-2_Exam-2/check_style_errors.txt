@@ -36,8 +36,9 @@ Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Edge.java:27:33: 'w' hides a field. [HiddenField]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Edge.java:54:8: Unused @param tag for 'v'. [JavadocMethod]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Edge.java:59:32: Expected @param tag for 'vertex'. [JavadocMethod]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Edge.java:66:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.
-Checkstyle ends with 4 errors.
+Checkstyle ends with 5 errors.
 Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\EdgeWeightedGraph.java:105:5: Missing a Javadoc comment. [JavadocMethod]
 Audit done.

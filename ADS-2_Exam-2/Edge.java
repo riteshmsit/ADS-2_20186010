@@ -63,10 +63,14 @@ class Edge {
             return v;
         }
     }
-/**.
-     * Returns a string representation of the object.
+    public int compareTo(final Edge that) {
+        return Double.compare(this.weight, that.weight);
+    }
+
+    /**
+     * Returns a string representation of this edge.
      *
-     * @return     String representation of the object.
+     * @return a string representation of this edge
      */
     public String toString() {
         return String.format("%d-%d %.5f", v, w, weight);
