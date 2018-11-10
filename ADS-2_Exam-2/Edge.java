@@ -6,12 +6,12 @@ class Edge {
      *the variable to store.
      *vetexOne
      */
-    private int vertexOne;
+    private int v;
     /**
      *the variable to store.
      *other vertex.
      */
-    private int vertexTwo;
+    private int w;
     /**
      *the variable to store the weight of.
      *each edge.
@@ -26,8 +26,8 @@ class Edge {
      */
     Edge(final int v, final int w,
          final double cost) {
-        this.vertexOne = v;
-        this.vertexTwo = w;
+        this.v = v;
+        this.w = w;
         this.weight = cost;
     }
     /**
@@ -46,7 +46,7 @@ class Edge {
      * Time complexity is O(1).
      */
     public int either() {
-        return vertexOne;
+        return v;
     }
     /**
      *returns the other end of vertex.
@@ -56,11 +56,20 @@ class Edge {
      * @return another vertex
      * Time complexity is O(1).
      */
-    public int other(final int v) {
-        if (v == vertexOne) {
-            return vertexTwo;
+    public int other(final int vertex) {
+        if (vertex == v) {
+            return w;
         } else {
-            return vertexOne;
+            return v;
         }
     }
+/**.
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
+    public String toString() {
+        return String.format("%d-%d %.5f", v, w, weight);
+    }
 }
+
