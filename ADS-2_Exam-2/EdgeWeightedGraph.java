@@ -101,7 +101,7 @@ class EdgeWeightedGraph {
         }
         return list;
     }
-    // To
+    // The time complexity of this method is O(V )
     public String toString() {
         StringBuilder s = new StringBuilder();
         s.append(ver + " vertices " + edg + " edges" + "\n");

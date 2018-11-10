@@ -32,6 +32,7 @@ public class Solution {
 			DijkstraSP shortest = new DijkstraSP(
                 edge, Integer.parseInt(input[0]));
             double distance = shortest.distTo(Integer.parseInt(input[1]));
+            // The time complexity is O(1)
             if (!shortest.hasPathTo(Integer.parseInt(input[1]))) {
             	System.out.println("No Path Found.");
             } else {
@@ -45,9 +46,28 @@ public class Solution {
 			// third is the destination.
 			// If the path exists print the distance between them.
 			// Other wise print "No Path Found."
-			
+			String[] str1 = sc.nextLine().split(" ");
+			boolean flag1 = false;
+			boolean flag2 = false;
+			double distance1 = 10;
+			double distance2 = 10;
+			DijkstraSP shortest1 = new DijkstraSP(edge, Integer.parseInt(str1[0]));
+			if (shortest1.hasPathTo(Integer.parseInt(str1[1]))) {
+				flag1 = true;
+				distance1 = shortest1.distance(Integer.parseInt(str1[1]));
+			}
+			DijkstraSP shortest2 = new DijkstraSP(edge, Integer.parseInt(str1[1]));
+			if (shortest2.hasPathTo(Integer.parseInt(str1[2]))) {
+				flag2 = true;
+				distance2 = shortest2.distance(Integer.parseInt(str1[2]));
+			}
+				double Distance = distance1 + distance2;
+				if (flag1 && flag2) {
+				System.out.format("%.1f", Distance);
+			} else {
+			System.out.println("No Path Found.");
+			}
 			break;
-
 		default:
 			break;
 		}
