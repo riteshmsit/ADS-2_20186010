@@ -70,6 +70,7 @@ public class Solution {
 			System.out.format("%.1f", Distance);
 			} else {
 				System.out.println("No Path Found.");
+				break;
 			}
 			System.out.println();
             ArrayList<Integer> path = new ArrayList<>();

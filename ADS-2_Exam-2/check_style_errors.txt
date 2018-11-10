@@ -92,7 +92,7 @@ Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:60: Line is longer than 80 characters (found 95). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:64: Line is longer than 80 characters (found 90). [LineLength]
 [ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:66:32: Name 'Distance' must match pattern '^[a-z][a-zA-Z0-9]*$'. [LocalVariableName]
-[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:86: Line is longer than 80 characters (found 84). [LineLength]
+[ERROR] C:\Users\rites\ADS-2_20186010\ADS-2_Exam-2\Solution.java:87: Line is longer than 80 characters (found 84). [LineLength]
 Audit done.
 Checkstyle ends with 17 errors.
 Starting audit...
