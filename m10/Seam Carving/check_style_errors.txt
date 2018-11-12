@@ -1,9 +1,7 @@
 Starting audit...
 Audit done.
 Starting audit...
-[ERROR] C:\Users\rites\ADS-2_20186010\m10\Seam Carving\PrintEnergy.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
-Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\m10\Seam Carving\PrintSeams.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\rites\ADS-2_20186010\m10\Seam Carving\PrintSeams.java:16: Line has trailing spaces. [RegexpSingleline]
@@ -40,9 +38,7 @@ Starting audit...
 Audit done.
 Checkstyle ends with 32 errors.
 Starting audit...
-[ERROR] C:\Users\rites\ADS-2_20186010\m10\Seam Carving\ResizeDemo.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 Audit done.
-Checkstyle ends with 1 errors.
 Starting audit...
 [ERROR] C:\Users\rites\ADS-2_20186010\m10\Seam Carving\SCUtility.java:0: File does not end with a newline. [NewlineAtEndOfFile]
 [ERROR] C:\Users\rites\ADS-2_20186010\m10\Seam Carving\SCUtility.java:13: Missing a Javadoc comment. [JavadocType]
