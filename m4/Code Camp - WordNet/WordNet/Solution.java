@@ -1,45 +1,50 @@
-/**.
- * { item_description }
- */
-import java.util.Scanner;
-/**.
- * { item_description }
+/**
+ * Class for solution.
  */
 public final class Solution {
-    /**.
+    /**
      * Constructs the object.
      */
     private Solution() {
-        /**.
-         * { item_description }
-         */
+        // Unused Constructor.
     }
-    /**.
-     * { function_description }
+    /**
+     * {Client Program}.
      *
      * @param      args  The arguments
      */
-    // time complexity for the main method is 1.
     public static void main(final String[] args) {
-        Scanner sc = new Scanner(System.in);
-        String n = "Files" + "\\" + sc.nextLine();
-        String m = "Files" + "\\" + sc.nextLine();
-        String word = sc.nextLine();
+        String synsetsFileName = StdIn.readLine();
+        String hypernymnsFileName = StdIn.readLine();
+        String token = StdIn.readLine();
         try {
-            WordNet wn = new WordNet(n, m);
-            if (word.equals("Graph")) {
-                wn.display();
-            } else if (word.equals("Queries")) {
-                while (sc.hasNextLine()) {
-                    String[] tokens = sc.nextLine().split(" ");
-                    String str = wn.sap(tokens[0], tokens[1]);
-                    int id = wn.distance(tokens[0], tokens[1]);
-                    System.out.println("distance = " + id
-                        + ", ancestor = " + str);
+            WordNet wordNet = new WordNet(
+                synsetsFileName, hypernymnsFileName);
+            switch (token) {
+            case "Graph":
+                System.out.println(wordNet.getDigraph());
+                break;
+            case "Queries":
+                while (StdIn.hasNextLine()) {
+                    String[] querys = StdIn.readLine().split(" ");
+                    if (querys[0].equals("null") || querys[1].equals("null")) {
+                        throw new IllegalArgumentException(
+                            "IllegalArgumentException");
+                    } else {
+                        System.out.println(
+                            "distance = " + wordNet.distance(
+                                querys[0], querys[1])
+                            + ", ancestor = " + wordNet.sap(
+                                querys[0], querys[1]));
+                    }
                 }
+                break;
+            default:
+                break;
             }
-        } catch (Exception e) {
-            System.out.println("IllegalArgumentException");
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
         }
     }
 }

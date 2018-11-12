@@ -1,148 +1,167 @@
-/**.
- * { item_description }
- */
-import java.io.File;
-/**.
- * { item_description }
- */
-
-import java.util.Scanner;
-/**.
- * { item_description }
- */
 import java.util.ArrayList;
-/**.
+/**
  * Class for word net.
  */
 public class WordNet {
-    /**.
-     * { var_description }
+    /**
+     * {Declaring an object for LinearProbingHashing}.
+     */
+    private LinearProbingHashST<String, ArrayList<Integer>> hash;
+    /**
+     * {ArrayList declaration}.
+     */
+    private ArrayList<String> synsetsList;
+    /**
+     * {Creating a object of SAP.java}.
      */
     private SAP sap;
-    /**.
-     * { var_description }
+    /**
+     * {Count of vertices}.
      */
-    private Digraph dg;
-    /**.
-     * { item_description }
+    private int count;
+    /**
+     * {Creating a digraph object}.
      */
-    private HashTable<String, ArrayList<Integer>> htable;
-    /**.
-     * { var_description }
-     */
-    private HashTable<Integer, String> htable1;
-    /**.
-     * { var_description }
-     */
-    private int ver = 0;
-    /**.
+    private Digraph digraphObj;
+    /**
      * Constructs the object.
-     * @throws     Exception  { exception_description }
+     *
      * @param      synsets    The synsets
      * @param      hypernyms  The hypernyms
      */
-    WordNet(final String synsets, final String hypernyms) throws Exception {
-        readSynsets(synsets);
-        readHypernyms(hypernyms);
-        // dg = new Digraph(ver);
-        // readHypernyms(hypernyms);
-        // sap = new SAP(dg);
+    public WordNet(final String synsets, final String hypernyms) {
+        hash = new LinearProbingHashST<String, ArrayList<Integer>>();
+        synsetsList = new ArrayList<String>();
+        this.count = 0;
+        readSynsets(synsets, hypernyms);
+        sap = new SAP(digraphObj);
     }
-    /**.
-     * Reads synsets.
+
+
+    /**
+     * {returns all WordNet nouns}.
      *
-     * @param      synsets    The synsets
-     *
-     * @throws     Exception  { exception_description }
+     * @return     {Iterable}
      */
-    public void readSynsets(final String synsets) throws Exception {
-        htable = new HashTable<String, ArrayList<Integer>>();
-        htable1 = new HashTable<Integer, String>();
-        int id = 0;
-            Scanner synIn = new Scanner(new File(synsets));
-            while (synIn.hasNextLine()) {
-                ver++;
-                // String line = synIn.readString();
-                String[] tokens = synIn.nextLine().split(",");
-                id = Integer.parseInt(tokens[0]);
-                htable1.put(id, tokens[1]);
-                String[] word = tokens[1].split(" ");
-                for (int i = 0; i < word.length; i++) {
-                    if (htable.contains(word[i])) {
-                        ArrayList<Integer> list = htable.get(word[i]);
-                        list.add(id);
-                        htable.put(word[i], list);
-                    } else {
-                        ArrayList<Integer> list = new ArrayList<Integer>();
-                        list.add(Integer.parseInt(tokens[0]));
-                        htable.put(word[i], list);
-                    }
-                }
-            }
+    public Iterable<String> nouns() {
+        return hash.keys();
     }
-    /**.
-     * Reads hypernyms.
+
+    /**
+     * Determines if noun.
      *
-     * @param      hypernyms  The hypernyms
+     * @param      word  The word
      *
-     * @throws     Exception  { exception_description }
+     * @return     True if noun, False otherwise.
      */
-    public void readHypernyms(final String hypernyms) throws Exception {
-        dg = new Digraph(ver);
-        Scanner hyperIn = new Scanner(new File(hypernyms));
-        while (hyperIn.hasNextLine()) {
-            // String line = ;
-            String[] tokens = hyperIn.nextLine().split(",");
-            for (int i = 1; i < tokens.length; i++) {
-                dg.addEdge(Integer.parseInt(tokens[0]),
-                 Integer.parseInt(tokens[i]));
-            }
-        }
+    public boolean isNoun(final String word) {
+        return hash.contains(word);
     }
-    /**.
-     * { function_description }
-     */
-    public void display() {
-        int c = 0;
-        DirectedCycle dc = new DirectedCycle(dg);
-        for (int i = 0; i < ver; i++) {
-            if (dg.outdegree(i) == 0) {
-                c++;
-            }
-        }
-        if (c > 1) {
-            System.out.println("Multiple roots");
-        } else if (dc.hasCycle()) {
-            System.out.println("Cycle detected");
-        } else {
-            System.out.println(dg);
-        }
-    }
-    /**.
-     * { function_description }
+
+    /**
+     * {distance between nounA and nounB (defined below)}.
      *
-     * @param      nounA  The noun a
-     * @param      nounB  The noun b
+     * @param      nounA  The nouna
+     * @param      nounB  The nounb
      *
-     * @return     { description_of_the_return_value }
+     * @return     {Integer}
      */
     public int distance(final String nounA, final String nounB) {
-        sap = new SAP(dg);
-        int dist = sap.length(htable.get(nounA), htable.get(nounB));
-        return dist;
+        if (nounA == null || nounB == null) {
+            throw new IllegalArgumentException("IllegalArgumentException");
+        }
+        Iterable<Integer> a = hash.get(nounA);
+        Iterable<Integer> b = hash.get(nounB);
+        return sap.length(a, b);
     }
-    /**.
-     * { function_description }
+
+
+    /**
+     * {Shortest Ancestral Path}.
      *
-     * @param      nounA  The noun a
-     * @param      nounB  The noun b
+     * @param      nounA  The nouna
+     * @param      nounB  The nounb
      *
-     * @return     { description_of_the_return_value }
+     * @return     {String}
      */
     public String sap(final String nounA, final String nounB) {
-        sap = new SAP(dg);
-        String str = "";
-        int id = sap.ancestor(htable.get(nounA), htable.get(nounB));
-        return htable1.get(id);
+        Iterable<Integer> a = hash.get(nounA);
+        Iterable<Integer> b = hash.get(nounB);
+        return synsetsList.get(sap.ancestor(a, b));
+    }
+
+    /**
+     * Reads synsets.
+     *
+     * @param      s          {String}
+     * @param      hypernyms  The hypernyms
+     */
+    public void readSynsets(final String s, final String hypernyms) {
+        In in = new In("./Files" + "/" + s);
+        int id;
+        while (!in.isEmpty()) {
+            this.count++;
+            String[] tokens = in.readLine().split(",");
+            id = Integer.parseInt(tokens[0]);
+            synsetsList.add(id, tokens[1]);
+            String[] syn1 = tokens[1].split(" ");
+            for (int i = 0; i < syn1.length; i++) {
+                ArrayList<Integer> list;
+                // System.out.println(syn1[i]);
+                if (hash.contains(syn1[i])) {
+                    list = hash.get(syn1[i]);
+                    list.add(id);
+                } else {
+                    list = new ArrayList<Integer>();
+                    list.add(id);
+                }
+                hash.put(syn1[i], list);
+            }
+        }
+        digraphObj = new Digraph(count);
+        readHyperNyms(hypernyms, digraphObj, count);
+    }
+    /**
+     * Reads hyper nyms.
+     *
+     * @param      s      {String}
+     * @param      d      {Digraph}
+     * @param      count1  The count of vertices
+     */
+    public void readHyperNyms(
+        final String s, final Digraph d, final int count1) {
+        In in = new In("./Files/" + s);
+        String[] tokens1 = null;
+        while (!in.isEmpty()) {
+            tokens1 = in.readString().split(",");
+            for (int i = 1; i < tokens1.length; i++) {
+                d.addEdge(
+                    Integer.parseInt(tokens1[0]),
+                    Integer.parseInt(tokens1[i]));
+            }
+        }
+        int flag = 0;
+        for (int i = 0; i < count1; i++) {
+            if (d.outdegree(i) == 0) {
+                flag++;
+            }
+            if (flag > 1) {
+                throw new IllegalArgumentException("Multiple roots");
+            }
+        }
+        DirectedCycle dc = new DirectedCycle(d);
+        if (dc.hasCycle()) {
+            throw new IllegalArgumentException("Cycle detected");
+        }
+    }
+    /**
+     * Gets the digraph.
+     *
+     * @return     The digraph.
+     */
+    public Digraph getDigraph() {
+        return digraphObj;
     }
 }
+
+

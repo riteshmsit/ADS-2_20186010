@@ -1,135 +1,127 @@
-/**graphimplementation.**/
-public class DiGraph {
-    /**
-     * variable.
+/**.
+ * Class for digraph.
+ */
+public class Digraph {
+    /**.
+     * { var_description }
      */
-    private final int vertices;
-    /**
-     * variable.
+    private int ver;
+    /**.
+     * { var_description }
      */
-    private int edges;
-    /**
-     * variable.
-     */
-    private int size;
-    /**
-     * variable.
+    private int edg;
+    /**.
+     * { var_description }
      */
     private Bag<Integer>[] adj;
-    /**
-     * variable.
+    /**.
+     * { var_description }
      */
-    private String[] vertex;
-    /**
-     * @brief [brief description]
-     * @details [long description]
-     * @param vert value.
+    private int size = 0;
+    /**.
+     * { var_description }
      */
-     public DiGraph(final int vert) {
-        if (vert < 0) {
-        throw new IllegalArgumentException(
-            "Number of vertices must be nonnegative");
-    }
-        this.vertices = vert;
-        this.edges = 0;
-        adj = (Bag<Integer>[]) new Bag[vert];
-        vertex = new String[vert];
-        for (int v = 0; v < vert; v++) {
+    private int[] indegree;
+    /**
+     * Initializes an empty graph with V vertices and 0 edges.
+     * param V the number of vertices
+     *
+     * @param  vt number of vertices
+     */
+    Digraph(final int vt) {
+        this.ver = vt;
+        this.edg = 0;
+        indegree = new int[ver];
+        size = 0;
+        adj = (Bag<Integer>[]) new Bag[ver];
+        for (int v = 0; v < ver; v++) {
             adj[v] = new Bag<Integer>();
         }
-        size = 0;
+    }
 
-    }
     /**
-     * @brief [brief description]
-     * @details [long description]
-     * Time complexity is O(1)
-     * @return value
+     * Returns the number of vertices in this graph.
+     * time complexity is 1 in avg case
+     * @return the number of vertices in this graph
      */
-     public int vertex() {
-        return vertices;
+    public int vert() {
+        return ver;
     }
+
     /**
-     * @brief [brief description]
-     * @details [long description]
-     * Time complexity is O(1)
-     * @return value
+     * Returns the number of edges in this graph.
+     * time complexity is 1 in avg case
+     * @return the number of edges in this graph
      */
-     public int edge() {
-        return edges;
+    public int edge() {
+        return edg;
     }
-    /**
-     * @param v value
-     * @return value
+    // /**.
+    //  * Adds a vertex.
+    //  * time complexity is 1
+    //  * @param      v     { parameter_description }
+    //  */
+    // public void addVertex(final String v) {
+    //     vertexes[size] = v;
+    //     size++;
+    // }
+    /**.
+     * Determines if it has edge.
+     * time complexity is O(N).
+     * @param      v     { parameter_description }
+     * @param      w     { parameter_description }
+     *
+     * @return     True if has edge, False otherwise.
      */
-    public Iterable<Integer> adj(final int v) {
-        //validateVertex(v);
-        return adj[v];
-    }
-    /**
-     * @brief [brief description]
-     * @details [long description]
-     * Time complexity is O(N ^ 2)
-     * @return value
-     */
-    public DiGraph reverse() {
-        DiGraph reverse = new DiGraph(this.vertex());
-        for (int v = 0; v < this.vertex(); v++) {
-            for (int w : adj(v)) {
-                reverse.addEdge(w, v);
+    public boolean hasEdge(final int v, final int w) {
+        for (int i : adj[w]) {
+            if (i == w) {
+                return true;
             }
         }
-        return reverse;
+        return false;
     }
-
     /**
-     * @brief [brief description]
-     * @details [long description]
-     * Time complexity is O(1)
-     * @param v value
-     * @param w value
+     * Adds the undirected edge v-w to this graph.
+     * time complexity is 1 in avg case
+     * @param  v one vertex in the edge
+     * @param  w the other vertex in the edge
      */
     public void addEdge(final int v, final int w) {
-
-        // validateVertex(v);
-        // validateVertex(w);
-    // if (v == w) {
-    //     System.out.println(vertices + " vertices, " + edges + " edges");
-    //     System.out.println("No edges");
-    //     return;
-    // }
-        edges++;
+        edg++;
         adj[v].add(w);
-       //adj[w].add(v);
+        indegree[w]++;
+        // adj[w].add(v);
     }
     /**
-     * @brief [brief description]
-     * @details [long description]
-     * Time complexity is O(1)
-     * @param s value
+     * Returns the vertices adjacent to vertex {@code v}.
+     * time complexity is 1 in avg case
+     * @param  v the vertex
+     * @return the vertices adjacent to vertex {@code v}, as an iterable
+     * @throws IllegalArgumentException unless {@code 0 <= v < V}
      */
-    public void addvertices(final String s) {
-        vertex[size++] = s;
+    public Iterable<Integer> adj(final int v) {
+        return adj[v];
+    }
 
-    }
     /**
-     * @brief [brief description]
-     * @details [long description]
-     * Time complexity is O(N ^ 2)
-     * @return value
+     * Returns the degree of vertex {@code v}.
+     * time complexity in average case is 1.
+     * @param  v the vertex
+     * @return the degree of vertex {@code v}
      */
-     public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append(vertices + " vertices, " + edges + " edges" + "\n");
-        for (int v = 0; v < vertices; v++) {
-            s.append(vertex[v] + ": ");
-            for (int w : adj[v]) {
-                s.append(vertex[w] + " ");
-                //s.substring(0,s.length() - 1);
-            }
-            s.append("\n");
-        }
-        return s.toString();
+    public int outdegree(final int v) {
+        return adj[v].size();
+    }
+
+    /**
+     * time complexity in average case is 1.
+     *
+     * @param  v the vertex
+     * @return the indegree of vertex {@code v}
+     */
+    public int indegree(final int v) {
+        return indegree[v];
     }
 
 }
