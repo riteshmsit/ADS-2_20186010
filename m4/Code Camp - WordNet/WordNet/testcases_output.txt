@@ -18,7 +18,12 @@ Expected Output:
 14: 13
 
 Your Output: 
-Digraph@2f7a2457
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -27,8 +32,12 @@ distance = 7, ancestor = entity
 distance = 10, ancestor = entity
 
 Your Output: 
-distance = 7, ancestor = entity
-distance = 7, ancestor = entity
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -41,12 +50,12 @@ distance = 7, ancestor = lipid lipide lipoid
 distance = 1, ancestor = animal_oil
 
 Your Output: 
-distance = 7, ancestor = macromolecule supermolecule
-distance = 7, ancestor = macromolecule supermolecule
-distance = 7, ancestor = macromolecule supermolecule
-distance = 7, ancestor = macromolecule supermolecule
-distance = 7, ancestor = macromolecule supermolecule
-distance = 1, ancestor = animal_oil
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -56,9 +65,12 @@ distance = 13, ancestor = thing
 distance = 2, ancestor = wax
 
 Your Output: 
-distance = 3, ancestor = wax
-distance = 3, ancestor = wax
-distance = 2, ancestor = wax
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -70,11 +82,12 @@ distance = 0, ancestor = e
 distance = 0, ancestor = f
 
 Your Output: 
-distance = 0, ancestor = b
-distance = 0, ancestor = b
-distance = 0, ancestor = b
-distance = 0, ancestor = b
-distance = 0, ancestor = b
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -91,16 +104,12 @@ distance = 2, ancestor = j
 distance = 1, ancestor = k
 
 Your Output: 
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 6: Failed ##########
@@ -114,13 +123,12 @@ distance = 3, ancestor = h
 distance = 1, ancestor = h
 
 Your Output: 
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 7: Failed ##########
@@ -137,16 +145,12 @@ distance = 3, ancestor = f
 distance = 4, ancestor = f
 
 Your Output: 
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
-distance = 1, ancestor = b
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 8: Failed ##########
@@ -162,7 +166,12 @@ Expected Output:
 7:
 
 Your Output: 
-Digraph@2f7a2457
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 9: Passed ##########
@@ -181,20 +190,30 @@ Your Output:
 Multiple roots
 ----------------------------------------
 
-########## Testcase 11: Passed ##########
+########## Testcase 11: Failed ##########
 Expected Output: 
 IllegalArgumentException
 
 Your Output: 
-IllegalArgumentException
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
-########## Testcase 12: Passed ##########
+########## Testcase 12: Failed ##########
 Expected Output: 
 IllegalArgumentException
 
 Your Output: 
-IllegalArgumentException
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
 ########## Testcase 13: Failed ##########
@@ -218,30 +237,24 @@ distance = 0, ancestor = era epoch
 distance = 8, ancestor = abstraction abstract_entity
 
 Your Output: 
-distance = 11, ancestor = whole unit
-distance = 8, ancestor = organism being
-distance = 8, ancestor = organism being
-distance = 8, ancestor = organism being
-distance = 2, ancestor = decade decennary decennium
-distance = 2, ancestor = decade decennary decennium
-distance = 2, ancestor = decade decennary decennium
-distance = 2, ancestor = decade decennary decennium
-distance = 2, ancestor = decade decennary decennium
-distance = 2, ancestor = decade decennary decennium
-distance = 2, ancestor = decade decennary decennium
-distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
-distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
-distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
-distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
-distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
-distance = 0, ancestor = 9/11 9-11 September_11 Sept._11 Sep_11
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
-########## Testcase 14: Passed ##########
+########## Testcase 14: Failed ##########
 Expected Output: 
 Cycle detected
 
 Your Output: 
-Cycle detected
+Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
+	at DirectedCycle.<init>(DirectedCycle.java:27)
+	at WordNet.readHyperNyms(WordNet.java:152)
+	at WordNet.readSynsets(WordNet.java:122)
+	at WordNet.<init>(WordNet.java:36)
+	at Solution.main(Solution.java:21)
 ----------------------------------------
 
