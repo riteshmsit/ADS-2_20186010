@@ -1,3 +1,12 @@
+/******************************************************************************
+ *  Compilation:  javac In.java
+ *  Execution:    java In   (basic test --- see source for required files)
+ *  Dependencies: none
+ *
+ *  Reads in data of various types from standard input, files, and URLs.
+ *
+ ******************************************************************************/
+
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,20 +23,49 @@ import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+/**
+ *  <i>Input</i>. This class provides methods for reading strings
+ *  and numbers from standard input, file input, URLs, and sockets. 
+ *  <p>
+ *  The Locale used is: language = English, country = US. This is consistent
+ *  with the formatting conventions with Java floating-point literals,
+ *  command-line arguments (via {@link Double#parseDouble(String)})
+ *  and standard output. 
+ *  <p>
+ *  For additional documentation, see 
+ *  <a href="https://introcs.cs.princeton.edu/31datatype">Section 3.1</a> of
+ *  <i>Computer Science: An Interdisciplinary Approach</i> 
+ *  by Robert Sedgewick and Kevin Wayne.
+ *  <p>
+ *  Like {@link Scanner}, reading a token also consumes preceding Java
+ *  whitespace, reading a full line consumes
+ *  the following end-of-line delimeter, while reading a character consumes
+ *  nothing extra. 
+ *  <p>
+ *  Whitespace is defined in {@link Character#isWhitespace(char)}. Newlines
+ *  consist of \n, \r, \r\n, and Unicode hex code points 0x2028, 0x2029, 0x0085;
+ *  see <a href="http://www.docjar.com/html/api/java/util/Scanner.java.html">
+ *  Scanner.java</a> (NB: Java 6u23 and earlier uses only \r, \r, \r\n).
+ *
+ *  @author David Pritchard
+ *  @author Robert Sedgewick
+ *  @author Kevin Wayne
+ */
 public final class In {
-
-
+    
+    ///// begin: section (1 of 2) of code duplicated from In to StdIn.
+    
     // assume Unicode UTF-8 encoding
     private static final String CHARSET_NAME = "UTF-8";
 
     // assume language = English, country = US for consistency with System.out.
     private static final Locale LOCALE = Locale.US;
 
-    // the default token separator; we maintain the invariant that this value
+    // the default token separator; we maintain the invariant that this value 
     // is held by the scanner's delimiter between calls
     private static final Pattern WHITESPACE_PATTERN = Pattern.compile("\\p{javaWhitespace}+");
 
-    // makes whitespace characters significant
+    // makes whitespace characters significant 
     private static final Pattern EMPTY_PATTERN = Pattern.compile("");
 
     // used to read the entire input. source:
@@ -38,7 +76,7 @@ public final class In {
 
     private Scanner scanner;
 
-    /**
+   /**
      * Initializes an input stream from standard input.
      */
     public In() {
@@ -46,7 +84,7 @@ public final class In {
         scanner.useLocale(LOCALE);
     }
 
-    /**
+   /**
      * Initializes an input stream from a socket.
      *
      * @param  socket the socket
@@ -65,7 +103,7 @@ public final class In {
         }
     }
 
-    /**
+   /**
      * Initializes an input stream from a URL.
      *
      * @param  url the URL
@@ -85,7 +123,7 @@ public final class In {
         }
     }
 
-    /**
+   /**
      * Initializes an input stream from a file.
      *
      * @param  file the file
@@ -107,7 +145,7 @@ public final class In {
     }
 
 
-    /**
+   /**
      * Initializes an input stream from a filename or web page name.
      *
      * @param  name the filename or web page name
@@ -158,11 +196,11 @@ public final class In {
     }
 
     /**
-     * Initializes an input stream from a given {@link Scanner} source; use with
+     * Initializes an input stream from a given {@link Scanner} source; use with 
      * {@code new Scanner(String)} to read from a string.
      * <p>
      * Note that this does not create a defensive copy, so the
-     * scanner will be mutated as you read on.
+     * scanner will be mutated as you read on. 
      *
      * @param  scanner the scanner
      * @throws IllegalArgumentException if {@code scanner} is {@code null}
@@ -180,13 +218,13 @@ public final class In {
     public boolean exists()  {
         return scanner != null;
     }
-
+    
     ////  begin: section (2 of 2) of code duplicated from In to StdIn,
     ////  with all methods changed from "public" to "public static".
 
-    /**
+   /**
      * Returns true if input stream is empty (except possibly whitespace).
-     * Use this to know whether the next call to {@link #readString()},
+     * Use this to know whether the next call to {@link #readString()}, 
      * {@link #readDouble()}, etc will succeed.
      *
      * @return {@code true} if this input stream is empty (except possibly whitespace);
@@ -196,7 +234,7 @@ public final class In {
         return !scanner.hasNext();
     }
 
-   /**
+   /** 
      * Returns true if this input stream has a next line.
      * Use this method to know whether the
      * next call to {@link #readLine()} will succeed.
@@ -213,9 +251,9 @@ public final class In {
      * Returns true if this input stream has more input (including whitespace).
      * Use this method to know whether the next call to {@link #readChar()} will succeed.
      * This method is functionally equivalent to {@link #hasNextLine()}.
-     *
+     * 
      * @return {@code true} if this input stream has more input (including whitespace);
-     *         {@code false} otherwise
+     *         {@code false} otherwise   
      */
     public boolean hasNextChar() {
         scanner.useDelimiter(EMPTY_PATTERN);
@@ -225,7 +263,7 @@ public final class In {
     }
 
 
-    /**
+   /**
      * Reads and returns the next line in this input stream.
      *
      * @return the next line in this input stream; {@code null} if no such line
@@ -260,9 +298,10 @@ public final class In {
             throw new NoSuchElementException("attempts to read a 'char' value from the input stream, "
                                            + "but no more tokens are available");
         }
-    }
+    }  
 
-    /**
+
+   /**
      * Reads and returns the remainder of this input stream, as a string.
      *
      * @return the remainder of this input stream, as a string
@@ -278,7 +317,7 @@ public final class In {
     }
 
 
-    /**
+   /**
      * Reads the next token from this input stream and returns it as a {@code String}.
      *
      * @return the next {@code String} in this input stream
@@ -533,12 +572,14 @@ public final class In {
             vals[i] = Double.parseDouble(fields[i]);
         return vals;
     }
+    
+    ///// end: section (2 of 2) of code duplicated from In to StdIn */
 
-    /**
+   /**
      * Closes this input stream.
      */
     public void close() {
-        scanner.close();
+        scanner.close();  
     }
 
     /**
@@ -616,4 +657,3 @@ public final class In {
         return new In().readAllStrings();
     }
 }
-

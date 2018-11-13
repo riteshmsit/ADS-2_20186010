@@ -1,156 +1,171 @@
-/**.
- * { item_description }
- */
-import java.util.Iterator;
-/**.
- * { item_description }
- */
-import java.util.NoSuchElementException;
-/**.
- * List of .
+/******************************************************************************
+ *  Compilation:  javac Stack.java
+ *  Execution:    java Stack < input.txt
+ *  Dependencies: StdIn.java StdOut.java
+ *  Data files:   https://algs4.cs.princeton.edu/13stacks/tobe.txt
  *
- * @param      <Item>  The item
+ *  A generic stack, implemented using a singly linked list.
+ *  Each stack element is of type Item.
+ *
+ *  This version uses a static nested class Node (to save 8 bytes per
+ *  Node), whereas the version in the textbook uses a non-static nested
+ *  class (for simplicity).
+ *  
+ *  % more tobe.txt 
+ *  to be or not to - be - - that - - - is
+ *
+ *  % java Stack < tobe.txt
+ *  to be not that or be (2 left on stack)
+ *
+ ******************************************************************************/
+
+
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+
+/**
+ *  The {@code Stack} class represents a last-in-first-out (LIFO) stack of generic items.
+ *  It supports the usual <em>push</em> and <em>pop</em> operations, along with methods
+ *  for peeking at the top item, testing if the stack is empty, and iterating through
+ *  the items in LIFO order.
+ *  <p>
+ *  This implementation uses a singly linked list with a static nested class for
+ *  linked-list nodes. See {@link LinkedStack} for the version from the
+ *  textbook that uses a non-static nested class.
+ *  See {@link ResizingArrayStack} for a version that uses a resizing array.
+ *  The <em>push</em>, <em>pop</em>, <em>peek</em>, <em>size</em>, and <em>is-empty</em>
+ *  operations all take constant time in the worst case.
+ *  <p>
+ *  For additional documentation,
+ *  see <a href="https://algs4.cs.princeton.edu/13stacks">Section 1.3</a> of
+ *  <i>Algorithms, 4th Edition</i> by Robert Sedgewick and Kevin Wayne.
+ *
+ *  @author Robert Sedgewick
+ *  @author Kevin Wayne
+ *
+ *  @param <Item> the generic type of an item in this stack
  */
 public class Stack<Item> implements Iterable<Item> {
-    /**.
-     * { var_description }
-     */
-    private int n;
-    /**.
-     * { var_description }
-     */
-    private Node first;
-    /**.
-     * Class for node.
-     */
-    private class Node {
-        /**.
-         * { var_description }
-         */
+    private Node<Item> first;     // top of stack
+    private int n;                // size of the stack
+
+    // helper linked list class
+    private static class Node<Item> {
         private Item item;
-        /**.
-         * { var_description }
-         */
-        private Node next;
+        private Node<Item> next;
     }
-    /**.
-     * Constructs the object.
+
+    /**
+     * Initializes an empty stack.
      */
     public Stack() {
         first = null;
         n = 0;
     }
-    /**.
-     * Determines if empty.
+
+    /**
+     * Returns true if this stack is empty.
      *
-     * @return     True if empty, False otherwise.
+     * @return true if this stack is empty; false otherwise
      */
     public boolean isEmpty() {
         return first == null;
     }
-    /**.
-     * { function_description }
+
+    /**
+     * Returns the number of items in this stack.
      *
-     * @return     { description_of_the_return_value }
+     * @return the number of items in this stack
      */
     public int size() {
         return n;
     }
-    /**.
-     * { function_description }
-     * time complexity in average case is 1.
-     * @param      item  The item
+
+    /**
+     * Adds the item to this stack.
+     *
+     * @param  item the item to add
      */
-    public void push(final Item item) {
-        Node oldfirst = first;
-        first = new Node();
+    public void push(Item item) {
+        Node<Item> oldfirst = first;
+        first = new Node<Item>();
         first.item = item;
         first.next = oldfirst;
         n++;
     }
-    /**.
-     * { function_description }
-     * time complexity in average case is 1.
-     * @return     { description_of_the_return_value }
+
+    /**
+     * Removes and returns the item most recently added to this stack.
+     *
+     * @return the item most recently added
+     * @throws NoSuchElementException if this stack is empty
      */
     public Item pop() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack underflow");
-        }
+        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         Item item = first.item;        // save item to return
         first = first.next;            // delete first node
         n--;
         return item;                   // return the saved item
     }
-    /**.
-     * { function_description }
-     * time complexity in average case is 1.
-     * @return     { description_of_the_return_value }
+
+
+    /**
+     * Returns (but does not remove) the item most recently added to this stack.
+     *
+     * @return the item most recently added to this stack
+     * @throws NoSuchElementException if this stack is empty
      */
     public Item peek() {
-        if (isEmpty()) {
-            throw new RuntimeException("Stack underflow");
-        }
+        if (isEmpty()) throw new NoSuchElementException("Stack underflow");
         return first.item;
     }
-    /**.
-     * Returns a string representation of the object.
-     * time complexity is O(N).
-     * @return     String representation of the object.
+
+    /**
+     * Returns a string representation of this stack.
+     *
+     * @return the sequence of items in this stack in LIFO order, separated by spaces
      */
     public String toString() {
         StringBuilder s = new StringBuilder();
         for (Item item : this) {
-            s.append(item + " ");
+            s.append(item);
+            s.append(' ');
         }
         return s.toString();
     }
-    /**.
-     * { function_description }
-     * time complexity in average case is 1.
-     * @return     { description_of_the_return_value }
+       
+
+    /**
+     * Returns an iterator to this stack that iterates through the items in LIFO order.
+     *
+     * @return an iterator to this stack that iterates through the items in LIFO order
      */
     public Iterator<Item> iterator() {
-        return new ListIterator();
+        return new ListIterator<Item>(first);
     }
-    /**.
-     * Class for list iterator.
-     */
-    private class ListIterator implements Iterator<Item> {
-        /**.
-         * { var_description }
-         */
-        private Node current = first;
-        /**.
-         * Determines if it has next.
-         * time complexity in average case is 1.
-         * @return     True if has next, False otherwise.
-         */
+
+    // an iterator, doesn't implement remove() since it's optional
+    private class ListIterator<Item> implements Iterator<Item> {
+        private Node<Item> current;
+
+        public ListIterator(Node<Item> first) {
+            current = first;
+        }
+
         public boolean hasNext() {
             return current != null;
         }
-        /**.
-         * time complexity in average case is 1.
-         * { function_description }
-         */
+
         public void remove() {
             throw new UnsupportedOperationException();
         }
-        /**.
-         * { function_description }
-         * time complexity in average case is 1.
-         * @return     { description_of_the_return_value }
-         */
+
         public Item next() {
-            if (!hasNext()) {
-                throw new NoSuchElementException();
-            }
+            if (!hasNext()) throw new NoSuchElementException();
             Item item = current.item;
-            current = current.next;
+            current = current.next; 
             return item;
         }
     }
 }
-
-
-

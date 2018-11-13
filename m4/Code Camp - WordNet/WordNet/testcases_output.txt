@@ -18,12 +18,8 @@ Expected Output:
 14: 13
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 1: Failed ##########
@@ -32,12 +28,8 @@ distance = 7, ancestor = entity
 distance = 10, ancestor = entity
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 2: Failed ##########
@@ -50,12 +42,8 @@ distance = 7, ancestor = lipid lipide lipoid
 distance = 1, ancestor = animal_oil
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 3: Failed ##########
@@ -65,12 +53,8 @@ distance = 13, ancestor = thing
 distance = 2, ancestor = wax
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 4: Failed ##########
@@ -82,12 +66,8 @@ distance = 0, ancestor = e
 distance = 0, ancestor = f
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 5: Failed ##########
@@ -104,12 +84,8 @@ distance = 2, ancestor = j
 distance = 1, ancestor = k
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 6: Failed ##########
@@ -123,12 +99,8 @@ distance = 3, ancestor = h
 distance = 1, ancestor = h
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 7: Failed ##########
@@ -145,12 +117,8 @@ distance = 3, ancestor = f
 distance = 4, ancestor = f
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 8: Failed ##########
@@ -166,28 +134,26 @@ Expected Output:
 7:
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
-########## Testcase 9: Passed ##########
+########## Testcase 9: Failed ##########
 Expected Output: 
 Multiple roots
 
 Your Output: 
-Multiple roots
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
-########## Testcase 10: Passed ##########
+########## Testcase 10: Failed ##########
 Expected Output: 
 Multiple roots
 
 Your Output: 
-Multiple roots
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 11: Failed ##########
@@ -195,12 +161,8 @@ Expected Output:
 IllegalArgumentException
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 12: Failed ##########
@@ -208,12 +170,8 @@ Expected Output:
 IllegalArgumentException
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 13: Failed ##########
@@ -237,12 +195,8 @@ distance = 0, ancestor = era epoch
 distance = 8, ancestor = abstraction abstract_entity
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
 ########## Testcase 14: Failed ##########
@@ -250,11 +204,7 @@ Expected Output:
 Cycle detected
 
 Your Output: 
-Exception in thread "main" java.lang.NoSuchMethodError: Digraph.vert()I
-	at DirectedCycle.<init>(DirectedCycle.java:27)
-	at WordNet.readHyperNyms(WordNet.java:152)
-	at WordNet.readSynsets(WordNet.java:122)
-	at WordNet.<init>(WordNet.java:36)
-	at Solution.main(Solution.java:21)
+Error: Could not find or load main class Solution
+Caused by: java.lang.ClassNotFoundException: Solution
 ----------------------------------------
 
