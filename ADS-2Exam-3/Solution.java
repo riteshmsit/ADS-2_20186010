@@ -84,14 +84,24 @@ public class Solution {
 	public static BinarySearchST<String, Integer> loadDictionary(String file) {
 		BinarySearchST<String, Integer>  st = new BinarySearchST<String, Integer>();
 		// your code goes here
+		String[] dictionary = toReadFile(file);
+		for (int i = 0; i < dictionary.length; i++) {
+			for (String word : dictionary[i].split(" ")) {
+				if (st.contains(word.toLowerCase())) {
+					st.put(word.toLowerCase(), st.get(word.toLowerCase()) + 1);
+				} else {
+					st.put(word.toLowerCase(), 1);
+				}
+			}
+		}
 		return st;
 	}
 
 }
 
 class T9 {
-	private BinarySearchST<String, Integer> bst;
-	private TST<Integer> tst;
+	TST<Integer> tst;
+	BinarySearchST<String, Integer> bst;
 	public T9(BinarySearchST<String, Integer> st) {
 		// your code goes here
 		bst = st;
@@ -133,7 +143,6 @@ class T9 {
 		return getSuggestions(potentialWords(t9Signature), k);
 	}
 }
-
 
 
 
