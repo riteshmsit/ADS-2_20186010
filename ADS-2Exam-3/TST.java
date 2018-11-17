@@ -61,7 +61,6 @@
 public class TST<Value> {
 	private int n;              // size
 	private Node<Value> root;   // root of TST
-
 	private static class Node<Value> {
 		private char c;                        // character
 		private Node<Value> left, mid, right;  // left, middle, and right subtries
