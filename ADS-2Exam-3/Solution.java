@@ -1,4 +1,4 @@
-import java.util.Scanner;                                                                                                                    
+import java.util.*;                                                                                                                    
 public class Solution {
 	// Don't modify this method.
 	public static void main(String[] args) {
@@ -90,14 +90,21 @@ public class Solution {
 }
 
 class T9 {
+	private BinarySearchST<String, Integer> bst;
+	private TST<Integer> tst;
 	public T9(BinarySearchST<String, Integer> st) {
 		// your code goes here
+		bst = st;
+		tst = new TST<Integer>();
+		for (String key : bst.keys()) {
+			tst.put(key, bst.get(key));
+		}
 	}
 
 	// get all the prefixes that match with given prefix.
 	public Iterable<String> getAllWords(String prefix) {
 		// your code goes here
-		return null;
+		return tst.keysWithPrefix(prefix);
 	}
 
 	public Iterable<String> potentialWords(String t9Signature) {
@@ -108,7 +115,16 @@ class T9 {
 	// return all possibilities(words), find top k with highest frequency.
 	public Iterable<String> getSuggestions(Iterable<String> words, int k) {
 		// your code goes here
-		return null;
+		ArrayList<String> wordList = new ArrayList<String>();
+		int max = 0;
+		for (String word : words) {
+			if (tst.get(word) > max) {
+				max = tst.get(word);
+				System.out.println(word);
+				wordList.add(word);
+			}
+		}
+		return wordList;
 	}
 
 	// final output
@@ -124,5 +140,3 @@ class T9 {
 
 
 
-
- 
