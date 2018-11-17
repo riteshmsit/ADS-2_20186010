@@ -1,4 +1,4 @@
-import java.util.*;                                                                                                                    
+import java.util.*;                                                                                                         
 public class Solution {
 	// Don't modify this method.
 	public static void main(String[] args) {
@@ -13,7 +13,6 @@ public class Solution {
 				System.out.println(hash.get(key));
 			}
 			break;
-
 		case "getAllPrefixes":
 			// input001.txt and output001.txt
 			T9 t9 = new T9(loadDictionary("/Files/t9.csv"));
@@ -24,7 +23,6 @@ public class Solution {
 				}
 			}
 			break;
-
 		case "potentialWords":
 			// input002.txt and output002.txt
 			t9 = new T9(loadDictionary("/Files/t9.csv"));
@@ -96,7 +94,6 @@ public class Solution {
 		}
 		return st;
 	}
-
 }
 
 class T9 {
@@ -125,16 +122,20 @@ class T9 {
 	// return all possibilities(words), find top k with highest frequency.
 	public Iterable<String> getSuggestions(Iterable<String> words, int k) {
 		// your code goes here
-		ArrayList<String> wordList = new ArrayList<String>();
-		int max = 0;
-		for (String word : words) {
-			if (tst.get(word) > max) {
-				max = tst.get(word);
-				System.out.println(word);
-				wordList.add(word);
-			}
-		}
-		return wordList;
+		MaxPQ<Integer> pq = new MaxPQ<Integer>();
+        for (String word : words) {
+            pq.insert(tst.get(word));
+        }
+        TreeSet<String> set = new TreeSet<String>();
+        for (int i = 0; i < k; i++) {
+            int frequency = pq.delMax();
+            for (String word : words) {
+                if (frequency == tst.get(word)) {
+                    set.add(word);
+                }
+            }
+        }
+        return set;		
 	}
 
 	// final output
