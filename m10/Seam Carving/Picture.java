@@ -58,7 +58,7 @@ public final class Picture implements ActionListener {
 
     /**
      * Creates a new picture that is a deep copy of the argument picture.
-     *
+     *  Time complexity is height * width
      * @param  picture the picture to copy
      */
     Picture(final Picture picture) {
@@ -188,7 +188,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Returns the height of the picture.
-      *
+      * Time complexity is O(1)
       * @return the height of the picture (in pixels)
       */
     public int height() {
@@ -197,7 +197,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Returns the width of the picture.
-      *
+      * Time complexity is O(1)
       * @return the width of the picture (in pixels)
       */
     public int width() {
@@ -206,7 +206,7 @@ public final class Picture implements ActionListener {
 
     /**
      * { function_description }.
-     *
+     * Time complexity is O(1)
      * @param      row   The row
      */
     private void validateRowIndex(final int row) {
@@ -219,7 +219,7 @@ public final class Picture implements ActionListener {
 
     /**
      * { function_description }.
-     *
+     * Time complexity is O(1)
      * @param      col   The col
      */
     private void validateColumnIndex(final int col) {
@@ -232,6 +232,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Returns the color of pixel ({@code col},
+      * Time complexity is O(1)
       * {@code row}) as a {@link java.awt.Color}.
       * @param col the column index
       * @param row the row index
@@ -247,6 +248,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Returns the color of pixel ({@code col}, {@code row}) as an {@code int}.
+      * Time complexity is O(1)
       * Using this method can be more efficient than
       * {@link #get(int, int)} because it does not
       * create a {@code Color} object.
@@ -301,7 +303,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Returns true if this picture is equal to the argument picture.
-      *
+      * Time complexity is O(1)
       * @param other the other picture
       * @return {@code true} if this picture
       * is the same dimension as {@code other}
@@ -337,6 +339,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Returns a string representation of this picture.
+      * Time complexity is O(1)
       * The result is a width-by-height matrix of pixels,
       * where the color of a pixel is represented using
       * 6 hex digits to encode
@@ -365,7 +368,7 @@ public final class Picture implements ActionListener {
 
     /**
      * This operation is not supported because pictures are mutable.
-     *
+     * Time complexity is O(1)
      * @return does not return a value
      * @throws UnsupportedOperationException if called
      */
@@ -377,7 +380,7 @@ public final class Picture implements ActionListener {
     /**
       * Saves the picture to a file in either PNG or JPEG format.
       * The filetype extension must be either .png or .jpg.
-      *
+      * Time complexity is O(1)
       * @param name the name of the file
       * @throws IllegalArgumentException if {@code name} is {@code null}
       */
@@ -392,7 +395,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Saves the picture to a file in a PNG or JPEG image format.
-      *
+      * Time complexity is O(1)
       * @param  file the file
       * @throws IllegalArgumentException if {@code file} is {@code null}
       */
@@ -420,6 +423,7 @@ public final class Picture implements ActionListener {
 
     /**
       * Opens a save dialog box when the user selects "Save As" from the menu.
+      * Time complexity is O(1)
       */
     @Override
     public void actionPerformed(final ActionEvent e) {
@@ -432,8 +436,6 @@ public final class Picture implements ActionListener {
         }
     }
 }
-
-
 
 
 

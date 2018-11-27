@@ -53,8 +53,3 @@ public final class ResizeDemo {
 
 
 
-
-
-
-
-

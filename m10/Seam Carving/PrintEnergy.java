@@ -10,7 +10,7 @@ public final class PrintEnergy {
     }
     /**
      * {Client Program}.
-     *
+     * Time complexity is height * width
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
@@ -31,8 +31,4 @@ public final class PrintEnergy {
         }
     }
 }
-
-
-
-
 

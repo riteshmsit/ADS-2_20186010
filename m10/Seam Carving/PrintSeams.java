@@ -30,17 +30,18 @@
  *  Total energy = 2530.681960
  *
  ******************************************************************************/
-
-import edu.princeton.cs.algs4.Picture;
-import edu.princeton.cs.algs4.StdOut;
-
 public class PrintSeams {
     private static final boolean HORIZONTAL   = true;
     private static final boolean VERTICAL     = false;
-
+    /**
+     * {Method to Print the Seam}.
+     * Time complexity is height * width
+     * @param      carver     The carver
+     * @param      seam       The seam
+     * @param      direction  The direction
+     */
     private static void printSeam(SeamCarver carver, int[] seam, boolean direction) {
-        double totalSeamEnergy = 0.0;
-
+        double totalSeamEnergy = 0.0;     
         for (int row = 0; row < carver.height(); row++) {
             for (int col = 0; col < carver.width(); col++) {
                 double energy = carver.energy(col, row);
